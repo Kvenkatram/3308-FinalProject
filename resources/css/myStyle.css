@@ -23,6 +23,14 @@ input[type=text], input[type=email], input[type=password] {
   border: 1px solid black;
   box-sizing: border-box;
 }
+#containerSongs {
+  height:600px;
+  background-color:#ffffff;
+}
+table,tr,th {
+  border: 1px solid;
+  padding: 8px;
+}
 </style>
 </head>
 <body>

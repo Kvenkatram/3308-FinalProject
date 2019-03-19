@@ -1,0 +1,8 @@
+//Database
+
+sudo -u postgres psql
+
+create database ourDb;
+
+\c ourDb;
+

@@ -1,6 +1,12 @@
 var express = require('express');
 var app = express();
 
+
+
+var bodyParser = require('body-parser'); //Ensure our body-parser tool has been added
+app.use(bodyParser.json());              // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
@@ -31,10 +37,11 @@ app.get('/register',function(req,res){
 //post login info to db
 
 app.post('/register/submit',function(req,res){
-	res.render('login');
-	console.log("Hellooooo");
+	res.render('register');
+	var test = req.body.firstName;
+	console.log(test);
 });
 
 
-app.listen(3000);
+app.listen(2000);
 console.log('server up on port 3000');

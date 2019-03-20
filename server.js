@@ -35,13 +35,15 @@ app.get('/register',function(req,res){
 
 
 //post login info to db
-
 app.post('/register/submit',function(req,res){
 	res.render('register');
 	var test = req.body.firstName;
-	console.log(test);
+	var userName = req.body.userName;
+	var email = req.body.emailAddress;
+	var password = req.body.passwordFirst;
+	var insert_statement = ";";
 });
 
 
 app.listen(2000);
-console.log('server up on port 3000');
+console.log('server up on port 2000');

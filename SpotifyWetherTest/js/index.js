@@ -1,4 +1,4 @@
-const KEY = 0f203d100bf401455f758a60d2d0c31d;
+const KEY = 
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");

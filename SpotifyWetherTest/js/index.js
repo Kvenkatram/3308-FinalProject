@@ -1,4 +1,4 @@
-const KEY = 
+KEY = "";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
@@ -9,7 +9,7 @@ searchBtn.addEventListener("click", getWeather);
 
 function getWeather(){
 	if (searchInput.value.length != 0 ){
-		let requestLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&appid="+KEY;
+		let requestLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&APPID="+KEY;
 		openWeatherCaller(requestLink, responseHandler);
 	}
 }

@@ -1,0 +1,76 @@
+body{
+	background-color: #eee;
+}
+
+.container{
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+
+.header {
+  height: 20%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  text-align: center;
+  position:relative;
+}
+
+
+.search {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  -webkit-transform:translate(-50%,-50%);
+          transform:translate(-50%,-50%);
+}
+
+#search-txt {
+  color: red;
+  height:30px;
+  border-radius: 10px;
+  border-style:none;
+  outline:none;
+  padding-right:1px;
+  padding-left:1px;
+  text-align:center;
+}
+
+
+#temp, #city_name {
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@font-face{
+	font-family: "Simplifica";
+	src: url("../fonts/SIMPLIFICA/SIMPLIFICA Typeface.ttf");
+}
+
+#labelWeather {
+	font-family: "Simplifica";
+	font-size: 30px;
+	text-align: center;
+	left: 50%;
+	top: 80%;
+	position: absolute;
+	-webkit-transform:translate(-50%,-50%);
+			transform:translate(-50%,-50%);
+}
+
+#label {
+	font-family: "Simplifica";
+	font-size: 20px;
+}
+
+#currLocation, #rain, #thunderstorm, #snow, #clear, #cloudy {
+	width: 100%;
+	height: 120px;
+	margin: 0 auto;
+}

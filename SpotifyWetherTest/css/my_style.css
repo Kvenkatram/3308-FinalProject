@@ -1,5 +1,6 @@
 body{
 	background-color: #eee;
+  background-size: cover;
 }
 
 .container{
@@ -42,10 +43,8 @@ body{
   font-weight: bold;
   font-size: 30px;
   text-align: center;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+]
+
 }
 
 @font-face{
@@ -54,6 +53,7 @@ body{
 }
 
 #labelWeather {
+  color: #1DB954;
 	font-family: "Simplifica";
 	font-size: 30px;
 	text-align: center;

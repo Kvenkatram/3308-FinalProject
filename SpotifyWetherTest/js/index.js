@@ -5,8 +5,13 @@ let searchInput = document.getElementById("search-txt");
 let cityName = document.getElementById("city_name");
 let temperature = document.getElementById("temp");
 
-searchBtn.addEventListener("click", getWeather);
 
+searchBtn.addEventListener("click", getWeather);
+searchInput.addEventListener("keyup", function(event){
+	if (event.keyCode === 13){
+		searchBtn.click();
+	}
+});
 function getWeather(){
 	if (searchInput.value.length != 0 ){
 		let requestLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&APPID="+KEY;
@@ -28,4 +33,5 @@ function responseHandler(response){
 	let jObj = JSON.parse(response);
 	cityName.innerHTML = jObj.name;
 	temperature.innerHTML = jObj.main.temp;
+	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }

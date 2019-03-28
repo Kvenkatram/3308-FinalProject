@@ -12,20 +12,24 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));//This line is necessary for us to use relative paths and access our resources directory
 
 
+
+var pgp = require('pg-promise')();
 //to do: set up db locally
 const dbConfig = {
 	host: 'localhost',
 	port: 5432,
-	database: 'ourDb',
+	database: 'finalproject3308',
 	user: 'postgres',
 	password: '123'
 };
 
-
+var db = pgp(dbConfig);
 
 //display_login
 app.get('/', function(req,res){
-	res.render('login');
+	res.render('login',{
+		isValid: '',
+	});
 });
 
 //display register page
@@ -33,17 +37,37 @@ app.get('/register',function(req,res){
 	res.render('register');
 });
 
-
 //post login info to db
 app.post('/register/submit',function(req,res){
 	res.render('register');
-	var test = req.body.firstName;
+	console.log(req.body);
+	var firstName = req.body.firstName;
 	var userName = req.body.userName;
 	var email = req.body.emailAddress;
 	var password = req.body.passwordFirst;
 	var insert_statement = ";";
 });
 
+
+//verify that login info is in DB
+app.get('/login/verify',function(req,res){
+	//console.log(req.query);
+	var userName = 'testName';
+	var userPass = 'test';
+	var checkUser = "SELECT * FROM user_register WHERE user_Name ='"+userName+"' and password = '"+userPass+"';";
+	db.any(checkUser)
+		.then(function(rows){
+			res.render('login',{
+				isValid: rows,
+			});
+		})
+		.catch(function(err){
+			request.flash('error', err);
+			response.render('login',{
+				isValid: '',
+			});
+		})
+});
 
 app.listen(2000);
 console.log('server up on port 2000');

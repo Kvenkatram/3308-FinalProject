@@ -4,14 +4,13 @@ CREATE TABLE user_register(
 	id SERIAL PRIMARY KEY,            /* the primary key for each entry */
 	user_Name VARCHAR(40) NOT NULL,   /* the name of the user      */
 	password TEXT NOT NULL,          /* the password  */
-	spotify_Username TEXT, 
-	email TEXT NOT NULL,			  /* the email which is connected to the user account in case of user forget password*/
+	email TEXT NOT NULL			  /* the email which is connected to the user account in case of user forget password*/
 
 );
 
 
-INSERT INTO user_register(user_Name, password, spotify_Username, email)
-VALUES('Gold Fish', 5, 'thisispassword', 'goldfish98','goldfish98@gmail.com'),    
+INSERT INTO user_register(user_Name, password, email)
+VALUES('testName', 'testPass','test@Email.com');    
 
 
 SELECT password FROM user_register WHERE user_Name='SamMars111';

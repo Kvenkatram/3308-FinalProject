@@ -39,13 +39,19 @@ app.get('/register',function(req,res){
 
 //post login info to db
 app.post('/register/submit',function(req,res){
-	res.render('register');
-	console.log(req.body);
-	var firstName = req.body.firstName;
 	var userName = req.body.userName;
 	var email = req.body.emailAddress;
 	var password = req.body.passwordFirst;
-	var insert_statement = ";";
+	var insert_statement = "INSERT INTO user_register(user_Name, password, email) VALUES('"+userName+"','"+password+"','"+email+"');";
+	db.any(insert_statement)
+		.then(info=>{
+			res.render('register');
+		})
+		.catch(error=>{
+			request.flash('error',error);
+			response.render('register');
+		})
+
 });
 
 

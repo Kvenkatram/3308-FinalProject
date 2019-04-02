@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Weather Display Test</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../css/my_style.css">
-</head>
-<body>
-	<div class="container">
-		<header class="header">
-			<div class="search">
-				<input type="text" id="search-txt" placeholder="Enter City Name">
-				<a id="search-btn" href="#"><i class="fa fa-search"></i></a>
-			</div>
-		</header>
-		<main>
+    <head>
+      <meta charset="utf-8">
+      <title>VOID</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+      <link rel="stylesheet" href="../css/my_style.css">
+    </head>
+    <body>
+      <div class="location">
+        <form>
+          <fieldset>
+            <legend>VOID</legend>
+            <div class="inner-location">
+              <div class="input-field">
+                <input type="text" class="search-txt" placeholder="Enter City Name">
+                <a id="search-btn" href="#display_weather" onclick="updateClear()" class="sbtn"><i class="fas fa-search fa-2x"></i></a>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
 
-			<div id="city_name"></div><br>
+      <div class="displayWeather" id="display_weather">
+				<video src="https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif" autoplay loop></video>
+        <form>
+          <fieldset>
+              <p id="city_name"></p><br>
+							<p id="temp"></p><br>
+							<p id="weather"></p>
+              <div class="decideWeather">
+                <div class="row line1">
+                  <div class="col parent">
+                    <button class="weather currentLocation">
+                      <i class="fas fa-map-marker-alt marker fa-3x"></i>
+                    </button>
+                    <p id="label"><b>CURRENT LOCATION</b></p>
+                  </div>
+                  <div class="col parent">
+                    <button class="weather rain">
+                      <i class="fas fa-tint fa-3x"></i>
+                    </button>
+                    <p id="label"><b>RAIN</b></p>
+                  </div>
+                  <div class="col parent">
+                    <button class="weather thunder">
+                      <i class="fa fa-bolt fa-3x"></i>
+                    </button>
+                    <p id="label"><b>THUNDER</b></p>
+                  </div>
+                </div>
+                <br>
+                <div class="row line2">
+                  <div class="col parent">
+                    <button class="weather snow">
+                      <i class="far fa-snowflake fa-3x"></i>
+                    </button>
+                    <p id="label"><b>SNOW</b></p>
+                  </div>
+                  <div class="col parent">
+                    <button class="weather clear">
+                      <i class="fas fa-star fa-3x"></i>
+                    </button>
+                    <p id="label"><b>CLEAR</b></p>
+                  </a>
+                  </div>
+                  <div class="col parent">
+                    <button class="weather cloudy">
+                      <i class="fa fa-cloud fa-3x"></i>
+                    </button>
+                    <p id="label"><b>CLOUDY</b></p>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+        </form>
+      </div>
 
-			<div id="temp"></div>
-		</main>
-	</div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="../js/index.js"></script>
 
-	<div class="container">
-		<h3 class="display-3" id="labelWeather">CHOOSE YOUR WEATHER</h3>
-	</div>
-
-	<div class="container">
-		<div class="row">
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="currLocation">
-					<i class="fas fa-map-marker-alt"></i>
-				</a>
-				<p style="text-align:center" id="label">Current Location</p>
-			</div>
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="rain">
-					<i class="fas fa-tint"></i>
-				</a>
-				<p id="label" style="text-align: center">Rain</p>
-			</div>
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="thunderstorm">
-					<i class="fas fa-bolt"></i>
-				</a>
-				<p id="label" style="text-align: center">Thunderstorm</p>
-			</div>
-		</div>
-
-		<br>
-
-		<div class="row">
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="snow">
-					<i class="far fa-snowflake"></i>
-				</a>
-				<h4 id="label" style="text-align:center">Snow</h4>
-			</div>
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="clear">
-					<i class="fas fa-moon"></i>
-				</a>
-				<p id="label" style="text-align: center">Clear</p>
-			</div>
-			<div class="col">
-				<a href="#" class="btn btn-outline-dark" id="cloudy">
-					<i class="fas fa-moon"></i>
-				</a>
-				<p id="label" style="text-align: center">Cloudy</p>
-			</div>
-		</div>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="../js/index.js"></script>
-</body>
+    </body>
 </html>

@@ -1,15 +1,20 @@
-const KEY = 0f203d100bf401455f758a60d2d0c31d;
+KEY = "";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
 let cityName = document.getElementById("city_name");
 let temperature = document.getElementById("temp");
+let weather = document.getElementById("weather");
 
 searchBtn.addEventListener("click", getWeather);
-
+searchInput.addEventListener("keyup", function(event){
+	if (event.keyCode === 13){
+		searchBtn.click();
+	}
+});
 function getWeather(){
 	if (searchInput.value.length != 0 ){
-		let requestLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&appid="+KEY;
+		let requestLink = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput.value + "&APPID="+KEY;
 		openWeatherCaller(requestLink, responseHandler);
 	}
 }
@@ -28,4 +33,6 @@ function responseHandler(response){
 	let jObj = JSON.parse(response);
 	cityName.innerHTML = jObj.name;
 	temperature.innerHTML = jObj.main.temp;
+	weather.innerHTML = jObj.weather[0].description;
+	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }

@@ -14,8 +14,8 @@
             <legend>VOID</legend>
             <div class="inner-location">
               <div class="input-field">
-                <input type="text" class="search-txt" placeholder="Enter City Name">
-                <a id="search-btn" href="#display_weather" onclick="updateClear()" class="sbtn"><i class="fas fa-search fa-2x"></i></a>
+                <input type="text" id="search-txt" placeholder="Enter City Name">
+                <a id="search-btn" href="#display_weather" class="sbtn"><i class="fas fa-search fa-2x"></i></a>
               </div>
             </div>
           </fieldset>
@@ -23,13 +23,14 @@
       </div>
 
       <div class="displayWeather" id="display_weather">
-				<video src="https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif" autoplay loop></video>
+				<!-- TODO: Make video background. Messed it up my bad. -->
+				<!-- <video src="https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif" autoplay loop></video> -->
         <form>
           <fieldset>
-              <p id="city_name"></p><br>
-							<p id="temp"></p><br>
-							<p id="weather"></p>
               <div class="decideWeather">
+								<p id="city_name"></p><br>
+								<p id="temp"></p><br>
+								<p id="weather"></p><br>
                 <div class="row line1">
                   <div class="col parent">
                     <button class="weather currentLocation">

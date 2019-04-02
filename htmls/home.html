@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Home Page</title>
+    <title>Not Climatune</title>
     <!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href= "../resources/css/myStyle.css">
@@ -32,32 +32,24 @@
       </div>
       </div>
     </nav>
-
     <br><br><br>
-
     <div class="container">
       <h1 class="text text-center">Your Playlist</h1><br>
         <div class="row">
           <div class="col-md-8">
-            <div class="container" id="containerSongs">
-              <table>
-                <tr>
-                  <th colspan="1">Remove</th>
-                  <th colspan="3">Song Name</th>
-                  <th colspan="2">Artist</th>
-                  <th colspan="1">Length</th>
-                </tr>
-                <tr>
-                  <td class="text-center" colspan="1" style="border:1px solid;padding:8px;">( - )</td>
-                  <td colspan="3">Song Name</td>
-                  <td colspan="2">Artist</td>
-                  <td colspan="1">Length</td>
-                </tr>
-              </table>
+            <!--<div class="container" id="containerSongs">-->
+              <iframe id="spotifyFrame" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd" width="600px" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <br><br>
+              <div class="container text-center" id="spotifyUsernameBox">
+                <h4> Spotify Username: </h4>
+                <p> Export Playlist to Spotify Account </p>
+                <button class="btn btn-sm btn-primary" type="submit"> Export Playlist </button>
+
             </div>
           </div>
           <div class="col-md-4">
-            <div class="container">
+            <div class="container" id="locationBox">
+              <!-- add JS to display info -->
               <h2>Location: </h2>
               <p>current temp</p>
               <p>humidity</p>
@@ -67,10 +59,8 @@
           </div>
         </div>
     </div>
-
-
-
-
-    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+  </html>

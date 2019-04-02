@@ -39,19 +39,13 @@ app.get('/register',function(req,res){
 
 //post login info to db
 app.post('/register/submit',function(req,res){
+	res.render('register');
+	console.log(req.body);
+	var firstName = req.body.firstName;
 	var userName = req.body.userName;
 	var email = req.body.emailAddress;
 	var password = req.body.passwordFirst;
-	var insert_statement = "INSERT INTO user_register(user_Name, password, email) VALUES('"+userName+"','"+password+"','"+email+"');";
-	db.any(insert_statement)
-		.then(info=>{
-			res.render('register');
-		})
-		.catch(error=>{
-			request.flash('error',error);
-			response.render('register');
-		})
-
+	var insert_statement = ";";
 });
 
 
@@ -60,7 +54,7 @@ app.get('/login/verify',function(req,res){
 	//console.log(req.query);
 	//var userName = 'testName';
 	//var userPass = 'testPass';
-	
+
 	var userName = req.query.inputEmail;
 	var userPass = req.query.inputPassword;
 	var checkUser = "SELECT * FROM user_register WHERE user_Name ='"+userName+"' and password = '"+userPass+"';";
@@ -76,6 +70,17 @@ app.get('/login/verify',function(req,res){
 				isValid: '',
 			});
 		})
+});
+
+app.get('/home',function(req,res){
+	res.render('home',{
+		playlistID:'37i9dQZF1DX0XUsuxWHRQd',
+		guestUsername:'username',
+		location:'Boulder',
+		currTemp:'54',
+		minTemp:'32',
+		maxTemp:'56',
+	})
 });
 
 app.listen(2000);

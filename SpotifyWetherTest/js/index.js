@@ -36,3 +36,14 @@ function responseHandler(response){
 	weather.innerHTML = jObj.weather[0].description;
 	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }
+
+function buttonHandler(weather){
+	if (weather == 'currentWeather')
+		if(cityName.innerHTML != ''){
+			alert("its good");
+		}
+		else{
+			alert("Please Enter Current Location");
+			return
+		}
+}

@@ -52,8 +52,11 @@ app.post('/register/submit',function(req,res){
 //verify that login info is in DB
 app.get('/login/verify',function(req,res){
 	//console.log(req.query);
-	var userName = 'testName';
-	var userPass = 'test';
+	//var userName = 'testName';
+	//var userPass = 'testPass';
+	
+	var userName = req.query.inputEmail;
+	var userPass = req.query.inputPassword;
 	var checkUser = "SELECT * FROM user_register WHERE user_Name ='"+userName+"' and password = '"+userPass+"';";
 	db.any(checkUser)
 		.then(function(rows){

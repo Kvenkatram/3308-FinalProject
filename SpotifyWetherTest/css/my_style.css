@@ -44,7 +44,7 @@ body {
 	position: relative;
 }
 
-.search-txt {
+#search-txt {
 	background-color: transparent;
 	color: rgb(65, 123, 224);
 	outline: none;

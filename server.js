@@ -37,32 +37,45 @@ app.get('/register',function(req,res){
 	res.render('register');
 });
 
+
+
 //post login info to db
 app.post('/register/submit',function(req,res){
-	res.render('register');
-	console.log(req.body);
-	var firstName = req.body.firstName;
 	var userName = req.body.userName;
 	var email = req.body.emailAddress;
 	var password = req.body.passwordFirst;
-	var insert_statement = ";";
+	var insert_statement = "INSERT INTO user_register(user_Name, password, email) VALUES('"+userName+"','"+password+"','"+email+"');";
+	//var isNewUser = "SELECT * FROM user_register WHERE user_Name ='"+userName+"' and password = '"+userPass+"';";
+
+	db.any(insert_statement)
+		.then(function(insert){
+			res.render('register');
+		})
+		.catch(function(err){
+			request.flash('error',err);
+			response.render('register');
+		})
 });
 
-
+//to do set login path to weather screen
 //verify that login info is in DB
 app.get('/login/verify',function(req,res){
 	//console.log(req.query);
 	//var userName = 'testName';
 	//var userPass = 'testPass';
-
-	var userName = req.query.inputEmail;
+	var userEmail = req.query.inputEmail;
 	var userPass = req.query.inputPassword;
-	var checkUser = "SELECT * FROM user_register WHERE user_Name ='"+userName+"' and password = '"+userPass+"';";
+	var checkUser = "SELECT * FROM user_register WHERE email ='"+userEmail+"' and password = '"+userPass+"';";
 	db.any(checkUser)
 		.then(function(rows){
-			res.render('login',{
-				isValid: rows,
-			});
+			if(rows[0] != undefined){
+				res.render('register');
+			}
+			else{
+				res.render('login',{
+					isValid: rows
+				});
+			}
 		})
 		.catch(function(err){
 			request.flash('error', err);

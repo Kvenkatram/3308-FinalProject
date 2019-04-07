@@ -1,0 +1,29 @@
+h1 {
+  color: #0000ff;
+  font-family: verdana;
+  font-size: 300%;
+}
+body  {
+  background-color: #5f6068;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+}
+.container {
+  padding: 32px;
+  background-color: #78bcbf;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+#containerSongs {
+  height:600px;
+  background-color:#ffffff;
+}
+table,tr,th {
+  border: 1px solid;
+  padding: 8px;
+}

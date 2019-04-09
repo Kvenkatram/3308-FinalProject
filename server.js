@@ -34,7 +34,7 @@ app.get('/', function(req,res){
 
 //display register page
 app.get('/register',function(req,res){
-	res.render('register');
+	res.sendFile(__dirname+ '/htmls/register.html');
 });
 
 //post login info to db

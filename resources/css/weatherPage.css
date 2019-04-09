@@ -124,3 +124,25 @@ body {
   text-align: center;
   letter-spacing: 2px;
 }
+
+.wsubmit {
+  height: 35px;
+  width: 250px;
+  text-align: center;
+  border-radius: 15px;
+  border-color: transparent;
+  background-color: #1DB954;
+  transition-duration: 0.2s;
+}
+
+.wsubmit:hover {
+  background-color: black;
+  color: #b4b4b4;
+}
+
+#labelsubmit {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+}

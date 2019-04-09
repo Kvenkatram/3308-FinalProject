@@ -69,7 +69,7 @@ app.get('/login/verify',function(req,res){
 	db.any(checkUser)
 		.then(function(rows){
 			if(rows[0] != undefined){
-				res.render('register');
+				res.render('weatherPage');
 			}
 			else{
 				res.render('login',{

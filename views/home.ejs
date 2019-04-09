@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Not Climatune</title>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href= "../resources/css/myStyle.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <a class="nav-link" href="home">Home</a>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="profile.html">User Profile</a>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="#">Saved Playlists</a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+      </div>
+      </div>
+    </nav>
+    <br><br><br>
+    <div class="container" id="mainContainer">
+      <h1 class="text text-center">Your Playlist</h1><br>
+        <div class="row">
+          <div class="col-md-8">
+            <!--<div class="container" id="containerSongs">-->
+              <iframe id="spotifyFrame" src="https://open.spotify.com/embed/playlist/<%- playlistID %>" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <br><br>
+              <div class="container text-center" id="spotifyUsernameBox">
+                <h4> Spotify Username: <%- guestUsername %></h4>
+                <p> Export Playlist to Spotify Account </p>
+                <button class="btn btn-sm btn-primary" type="submit"> Export Playlist </button>
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="container" id="locationBox">
+              <!-- add JS to display info -->
+              <h2>Location: <%- location %></h2>
+              <p><%- currTemp %></p>
+              <p>humidity</p>
+              <p><%- minTemp %> / <%- maxTemp %></p>
+              <p>Wind Speed</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+  </html>
+
+  <!--
+  //document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
+    spotifyFrame
+      - playlistID
+
+    spotifyUsernameBox
+      - guestUsername
+
+    locationBox
+      - location
+      - currTemp
+      - minTemp
+      - maxTemp
+  -->

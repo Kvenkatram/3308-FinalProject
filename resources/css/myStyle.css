@@ -1,11 +1,10 @@
-
 h1 {
   color: #0000ff;
   font-family: verdana;
   font-size: 300%;
 }
 body  {
-  background-color: #5f6068;
+  background-image: url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif');
 }
 
 input[type=text], input[type=email], input[type=password] {
@@ -16,16 +15,18 @@ input[type=text], input[type=email], input[type=password] {
 }
 .container {
   padding: 32px;
-  background-color: #78bcbf;
   border: 1px solid black;
   box-sizing: border-box;
 }
-#containerSongs {
-  height:600px;
-  background-color:#ffffff;
+#mainContainer {
+background-color: transparent;
+border: 0px;
 }
-table,tr,th {
-  border: 1px solid;
-  padding: 8px;
+#locationBox {
+  background-color: rgba(255,255,255,.6);
+  border-radius: 25px;
 }
-
+#spotifyUsernameBox {
+  background-color: rgba(255,255,255,.6);
+  border-radius: 25px;
+}

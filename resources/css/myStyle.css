@@ -1,3 +1,4 @@
+
 h1 {
   color: #0000ff;
   font-family: verdana;
@@ -7,12 +8,6 @@ body  {
   background-image: url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif');
 }
 
-input[type=text], input[type=email], input[type=password] {
-  width: 80%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-}
 .container {
   padding: 32px;
   border: 1px solid black;

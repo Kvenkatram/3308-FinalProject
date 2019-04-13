@@ -79,13 +79,21 @@ body {
 }
 
 #city_name {
-  text-align: center;
-  font-size: 40px;
+  font-family: "Simplifica";
+	font-size: 150px;
+	color: black;
+	text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 #temp, #weather {
   text-align: center;
+  font-family: "Simplifica";
+  font-size: 30px;
   font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .parent {
@@ -105,6 +113,11 @@ body {
 }
 
 .weather:hover {
+  background-color: black;
+  color: #b4b4b4;
+}
+
+.weather:active {
   background-color: black;
   color: #b4b4b4;
 }

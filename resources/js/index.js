@@ -1,4 +1,4 @@
-KEY = "";
+KEY = "c4bfd6c17c9b7ce8d7a6d054dcce4b2e";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
@@ -9,7 +9,7 @@ let cityNameInput = document.getElementById("cityName");
 let weatherId = document.getElementById("weatherId");
 
 searchBtn.addEventListener("click", getWeather);
-searchInput.addEventListener("keyup", function(event){
+searchInput.addEventListener("keyup", function(event){		// enter not working correctly
 	if (event.keyCode === 13){
 		searchBtn.click();
 	}
@@ -34,11 +34,11 @@ function openWeatherCaller(url, callback){
 function responseHandler(response){
 	let jObj = JSON.parse(response);
 	cityName.innerHTML = jObj.name;
-	temperature.innerHTML = jObj.main.temp;
-	weather.innerHTML = jObj.weather[0].description;
 	weatherId.value = jObj.weather[0].id;
 	cityNameInput.value = jObj.name;
-	//cityNameInput.value = the weather id
+	let tempVal = ((jObj.main.temp - 273.15) * 9/5) + 32;
+	temperature.innerHTML = Math.round(tempVal) + " F";
+	weather.innerHTML = jObj.weather[0].main;
 	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }
 
@@ -76,6 +76,4 @@ function buttonHandler(weather){
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
 	}
-
-		
 }

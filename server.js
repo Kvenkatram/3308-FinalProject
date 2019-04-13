@@ -97,6 +97,7 @@ app.get('/home',function(req,res){
 		playlistID:'37i9dQZF1DX0XUsuxWHRQd',
 		guestUsername:'username',
 		location:cityName,
+		weatherID:weatherId,
 		currTemp:curTemp,
 		minTemp:minTemp,
 		maxTemp:maxTemp,

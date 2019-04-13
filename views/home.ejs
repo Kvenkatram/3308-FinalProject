@@ -30,6 +30,14 @@
               <p> Minimum Tempurature: <%- minTemp %></p>
               <p> Maximum Tempurature: <%- maxTemp %></p>
 
+           <% if(weatherID){ %>
+                  <script type="text/javascript">
+                  console.log("here");
+                   changeBackground(weatherID);
+                  </script>
+          
+              <% } %>
+
             </div>
           </div>
         </div>

@@ -63,25 +63,49 @@ function buttonHandler(weather){
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
 		cityNameInput.value = '';
+		curTemp.value = '';
+		minTemp.value = '';
+		maxTemp.value = '';
+		weatherId.value = '504';
 	}
 	else if (weather == 'thunder'){
 		cityName.innerHTML = 'Weather Selection: Thunder';
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
+		cityNameInput.value = '';
+		curTemp.value = '';
+		minTemp.value = '';
+		maxTemp.value = '';
+		weatherId.value = '211';
 	}
 	else if (weather == 'snow'){
 		cityName.innerHTML = 'Weather Selection: Snow';
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
+		cityNameInput.value = '';
+		curTemp.value = '';
+		minTemp.value = '';
+		maxTemp.value = '';
+		weatherId.value = '601';
 	}
 	else if (weather == 'clear'){
 		cityName.innerHTML = 'Weather Selection: Clear';
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
+		cityNameInput.value = '';
+		curTemp.value = '';
+		minTemp.value = '';
+		maxTemp.value = '';
+		weatherId.value = '800';
 	}
 	else if (weather == 'cloudy'){
 		cityName.innerHTML = 'Weather Selection: Cloudy';
 		temperature.innerHTML = '';
 		weather.innerHTML = '';
+		cityNameInput.value = '';
+		curTemp.value = '';
+		minTemp.value = '';
+		maxTemp.value = '';
+		weatherId.value = '804';
 	}
 }

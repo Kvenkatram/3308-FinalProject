@@ -89,14 +89,18 @@ app.get('/home',function(req,res){
 	
 	var cityName = req.query.cityName;
 	var weatherId = req.query.weatherId;
+	var curTemp = req.query.curTemp;
+	var minTemp = req.query.minTemp;
+	var maxTemp = req.query.maxTemp;
+	console.log(weatherId);
 	res.render('home',{
 		playlistID:'37i9dQZF1DX0XUsuxWHRQd',
 		guestUsername:'username',
 		location:cityName,
-		currTemp:'54',
-		minTemp:'32',
-		maxTemp:'56',
 		weatherID:weatherId,
+		currTemp:curTemp,
+		minTemp:minTemp,
+		maxTemp:maxTemp,
 	})
 });
 

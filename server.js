@@ -96,6 +96,7 @@ app.get('/home',function(req,res){
 		currTemp:'54',
 		minTemp:'32',
 		maxTemp:'56',
+		weatherID:weatherId,
 	})
 });
 

@@ -7,6 +7,9 @@ let temperature = document.getElementById("temp");
 let weather = document.getElementById("weather");
 let cityNameInput = document.getElementById("cityName");
 let weatherId = document.getElementById("weatherId");
+let minTemp = document.getElementById("minTemp");
+let maxTemp = document.getElementById("maxTemp");
+let curTemp = document.getElementById("curTemp");
 
 searchBtn.addEventListener("click", getWeather);
 searchInput.addEventListener("keyup", function(event){		// enter not working correctly
@@ -39,6 +42,11 @@ function responseHandler(response){
 	let tempVal = ((jObj.main.temp - 273.15) * 9/5) + 32;
 	temperature.innerHTML = Math.round(tempVal) + " F";
 	weather.innerHTML = jObj.weather[0].main;
+	curTemp.value = Math.round(tempVal);
+	let minTempC = ((jObj.main.temp_min - 273.15) * 9/5) + 32;
+	minTemp.value = Math.round(minTempC);
+	let maxTempC = ((jObj.main.temp_max - 273.15) * 9/5) + 32;
+	maxTemp.value = Math.round(maxTempC);
 	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }
 

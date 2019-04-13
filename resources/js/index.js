@@ -7,7 +7,7 @@ let temperature = document.getElementById("temp");
 let weather = document.getElementById("weather");
 
 searchBtn.addEventListener("click", getWeather);
-searchInput.addEventListener("keyup", function(event){
+searchInput.addEventListener("keyup", function(event){		// enter not working correctly
 	if (event.keyCode === 13){
 		searchBtn.click();
 	}
@@ -31,9 +31,11 @@ function openWeatherCaller(url, callback){
 
 function responseHandler(response){
 	let jObj = JSON.parse(response);
+	console.log(jObj);
 	cityName.innerHTML = jObj.name;
-	temperature.innerHTML = jObj.main.temp;
-	weather.innerHTML = jObj.weather[0].description;
+	let tempVal = ((jObj.main.temp - 273.15) * 9/5) + 32;
+	temperature.innerHTML = Math.round(tempVal) + " F";
+	weather.innerHTML = jObj.weather[0].main;
 	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }
 
@@ -44,8 +46,6 @@ function buttonHandler(weather){
 		}
 		else{
 			alert("Please Enter Current Location");
-			return
+			return;
 		}
-
-	
 }

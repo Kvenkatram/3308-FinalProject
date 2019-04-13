@@ -1,10 +1,12 @@
-KEY = "c4bfd6c17c9b7ce8d7a6d054dcce4b2e";
+KEY = "";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
 let cityName = document.getElementById("city_name");
 let temperature = document.getElementById("temp");
 let weather = document.getElementById("weather");
+let cityNameInput = document.getElementById("cityName");
+let weatherId = document.getElementById("weatherId");
 
 searchBtn.addEventListener("click", getWeather);
 searchInput.addEventListener("keyup", function(event){
@@ -34,18 +36,46 @@ function responseHandler(response){
 	cityName.innerHTML = jObj.name;
 	temperature.innerHTML = jObj.main.temp;
 	weather.innerHTML = jObj.weather[0].description;
+	weatherId.value = jObj.weather[0].id;
+	cityNameInput.value = jObj.name;
+	//cityNameInput.value = the weather id
 	//document.body.style.backgroundImage = "url('https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif')";
 }
 
 function buttonHandler(weather){
-	if (weather == 'currentWeather')
-		if(cityName.innerHTML != ''){
-			alert("its good");
-		}
-		else{
-			alert("Please Enter Current Location");
-			return
-		}
 
-	
+
+	if (weather == 'currentWeather'){
+		if(temperature.innerHTML == ''){
+			alert("Please Enter Current Location");
+		}
+	}
+	else if (weather == 'rain'){
+		cityName.innerHTML = 'Weather Selection: Rain';
+		temperature.innerHTML = '';
+		weather.innerHTML = '';
+		cityNameInput.value = '';
+	}
+	else if (weather == 'thunder'){
+		cityName.innerHTML = 'Weather Selection: Thunder';
+		temperature.innerHTML = '';
+		weather.innerHTML = '';
+	}
+	else if (weather == 'snow'){
+		cityName.innerHTML = 'Weather Selection: Snow';
+		temperature.innerHTML = '';
+		weather.innerHTML = '';
+	}
+	else if (weather == 'clear'){
+		cityName.innerHTML = 'Weather Selection: Clear';
+		temperature.innerHTML = '';
+		weather.innerHTML = '';
+	}
+	else if (weather == 'cloudy'){
+		cityName.innerHTML = 'Weather Selection: Cloudy';
+		temperature.innerHTML = '';
+		weather.innerHTML = '';
+	}
+
+		
 }

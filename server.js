@@ -86,10 +86,13 @@ app.get('/login/verify',function(req,res){
 });
 
 app.get('/home',function(req,res){
+	
+	var cityName = req.query.cityName;
+	var weatherId = req.query.weatherId;
 	res.render('home',{
 		playlistID:'37i9dQZF1DX0XUsuxWHRQd',
 		guestUsername:'username',
-		location:'Boulder',
+		location:cityName,
 		currTemp:'54',
 		minTemp:'32',
 		maxTemp:'56',

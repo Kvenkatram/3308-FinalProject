@@ -1,6 +1,5 @@
 function changeBackground(weatherID){
-	console.log("test");
-	if (weatherID>=200&&weatherID<=232){
+	if (weatherID >= 200 && weatherID <= 232){
 		document.body.style.backgroundImage = "url('https://media.giphy.com/media/l2Sq3Xc55AemEfpwk/giphy.gif')";
 	}
 	else if (weatherID>=300&&weatherID<=531){

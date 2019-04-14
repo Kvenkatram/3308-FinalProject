@@ -5,7 +5,6 @@
   <body>
 
     <% include ../views/partials/navbar.ejs %>
-
     <br><br><br>
     <div class="container" id="mainContainer">
       <h1 class="text text-center">Your Playlist</h1><br>
@@ -28,14 +27,11 @@
               <p> Current Tempurature: <%- currTemp %></p>
               <p> Minimum Tempurature: <%- minTemp %></p>
               <p> Maximum Tempurature: <%- maxTemp %></p>
-
-           <% if(weatherID){ %>
-                  <script type="text/javascript">
-                  console.log("here");
-                   changeBackground(weatherID);
-                  </script>
-          
-              <% } %>
+           <script src="../resources/js/homescript.js"></script>
+           <script>
+            var id = <%-JSON.stringify(weatherId)%>;
+            changeBackground(id);
+           </script>
 
             </div>
           </div>

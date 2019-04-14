@@ -1,4 +1,4 @@
-KEY = "c4bfd6c17c9b7ce8d7a6d054dcce4b2e";
+KEY = "";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
@@ -66,7 +66,7 @@ function buttonHandler(weather){
 		curTemp.value = '';
 		minTemp.value = '';
 		maxTemp.value = '';
-		weatherId.value = '504';
+		weatherId.value = 504;
 	}
 	else if (weather == 'thunder'){
 		cityName.innerHTML = 'Weather Selection: Thunder';
@@ -76,7 +76,7 @@ function buttonHandler(weather){
 		curTemp.value = '';
 		minTemp.value = '';
 		maxTemp.value = '';
-		weatherId.value = '211';
+		weatherId.value = 211;
 	}
 	else if (weather == 'snow'){
 		cityName.innerHTML = 'Weather Selection: Snow';
@@ -86,7 +86,7 @@ function buttonHandler(weather){
 		curTemp.value = '';
 		minTemp.value = '';
 		maxTemp.value = '';
-		weatherId.value = '601';
+		weatherId.value = 601;
 	}
 	else if (weather == 'clear'){
 		cityName.innerHTML = 'Weather Selection: Clear';
@@ -96,7 +96,7 @@ function buttonHandler(weather){
 		curTemp.value = '';
 		minTemp.value = '';
 		maxTemp.value = '';
-		weatherId.value = '800';
+		weatherId.value = 800;
 	}
 	else if (weather == 'cloudy'){
 		cityName.innerHTML = 'Weather Selection: Cloudy';
@@ -106,6 +106,6 @@ function buttonHandler(weather){
 		curTemp.value = '';
 		minTemp.value = '';
 		maxTemp.value = '';
-		weatherId.value = '804';
+		weatherId.value = 804;
 	}
 }

@@ -9,14 +9,14 @@ function changeBackground(weatherID){
 	{
 		document.body.style.backgroundImage = "url('https://media.giphy.com/media/7MP2oPL3wZRKg/giphy.gif')";
 	}
-	else if (wetaher>=701&&weatherID<=781){
+	else if (weatherID>=701&&weatherID<=781){
 		document.body.style.backgroundImage = "url('https://media.giphy.com/media/aAvJE6v5JStKE/giphy.gif')";
 	}
-	else if (wetaher==800){
+	else if (weatherID==800){
 		document.body.style.backgroundImage = "url('https://media.giphy.com/media/NWuqmpjHIXTdS/giphy.gif')";
 	}
 	else if (weatherID>=801&&weatherID<=804){
-		document.body.style.backgroundImage = "url('https://media.giphy.com/media/37N1l3gxbGRCU/giphy.gif')";		
+		document.body.style.backgroundImage = "url('https://media.giphy.com/media/37N1l3gxbGRCU/giphy.gif')";
 	}
 
 }

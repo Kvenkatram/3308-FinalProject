@@ -87,7 +87,7 @@ body {
   margin-bottom: 0;
 }
 
-#temp, #weather {
+#temp, #weather, #bselected {
   text-align: center;
   font-family: "Simplifica";
   font-size: 30px;

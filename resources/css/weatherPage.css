@@ -138,7 +138,7 @@ body {
   letter-spacing: 2px;
 }
 
-.wsubmit {
+#wsubmit {
   height: 35px;
   width: 250px;
   text-align: center;
@@ -146,9 +146,10 @@ body {
   border-color: transparent;
   background-color: #1DB954;
   transition-duration: 0.2s;
+  visibility: hidden;
 }
 
-.wsubmit:hover {
+#wsubmit:hover {
   background-color: black;
   color: #b4b4b4;
 }

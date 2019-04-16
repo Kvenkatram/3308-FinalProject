@@ -1,14 +1,16 @@
-KEY = "c4bfd6c17c9b7ce8d7a6d054dcce4b2e";
+KEY = "";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
 let cityName = document.getElementById("city_name");
 let temperature = document.getElementById("temp");
 let weather = document.getElementById("weather");
+let weathername = document.getElementById("savedWeather")
 let btnselected = document.getElementById("bselected");
-let weathername;
+let create = document.getElementById("wsubmit")
 let cityNameInput = document.getElementById("cityName");
 let weatherId = document.getElementById("weatherId");
+let wID = document.getElementById("savedID");
 let minTemp = document.getElementById("minTemp");
 let maxTemp = document.getElementById("maxTemp");
 let curTemp = document.getElementById("curTemp");
@@ -40,11 +42,12 @@ function responseHandler(response){
 	let jObj = JSON.parse(response);
 	cityName.innerHTML = jObj.name;
 	weatherId.value = jObj.weather[0].id;
+	wID.value = jObj.weather[0].id;
 	cityNameInput.value = jObj.name;
 	let tempVal = ((jObj.main.temp - 273.15) * 9/5) + 32;
 	temperature.innerHTML = Math.round(tempVal) + " F";
 	weather.innerHTML = jObj.weather[0].main;
-	weathername = jObj.weather[0].main;
+	weathername.value = jObj.weather[0].main;
 	curTemp.value = Math.round(tempVal);
 	let minTempC = ((jObj.main.temp_min - 273.15) * 9/5) + 32;
 	minTemp.value = Math.round(minTempC);
@@ -54,59 +57,39 @@ function responseHandler(response){
 }
 
 function buttonHandler(weather){
-
-
 	if (weather == 'currentWeather'){
 		if(temperature.innerHTML == ''){
 			alert("Please Enter Current Location");
 			btnselected.innerHTML = '';
 		} else {
-			btnselected.innerHTML = 'Weather Selection: ' + weathername;
+			btnselected.innerHTML = 'Weather Selection: ' + weathername.value;
+			weatherId.value = wID.value;
+			create.style.visibility = 'visible';
 		}
 	}
 	else if (weather == 'rain'){
 		btnselected.innerHTML = 'Weather Selection: Rain';
-		weather.innerHTML = '';
-		cityNameInput.value = '';
-		curTemp.value = '';
-		minTemp.value = '';
-		maxTemp.value = '';
 		weatherId.value = 504;
+		create.style.visibility = 'visible';
 	}
 	else if (weather == 'thunder'){
 		btnselected.innerHTML = 'Weather Selection: Thunder';
-		weather.innerHTML = '';
-		cityNameInput.value = '';
-		curTemp.value = '';
-		minTemp.value = '';
-		maxTemp.value = '';
 		weatherId.value = 211;
+		create.style.visibility = 'visible';
 	}
 	else if (weather == 'snow'){
 		btnselected.innerHTML = 'Weather Selection: Snow';
-		weather.innerHTML = '';
-		cityNameInput.value = '';
-		curTemp.value = '';
-		minTemp.value = '';
-		maxTemp.value = '';
 		weatherId.value = 601;
+		create.style.visibility = 'visible';
 	}
 	else if (weather == 'clear'){
 		btnselected.innerHTML = 'Weather Selection: Clear';
-		weather.innerHTML = '';
-		cityNameInput.value = '';
-		curTemp.value = '';
-		minTemp.value = '';
-		maxTemp.value = '';
 		weatherId.value = 800;
+		create.style.visibility = 'visible';
 	}
 	else if (weather == 'cloudy'){
 		btnselected.innerHTML = 'Weather Selection: Cloudy';
-		weather.innerHTML = '';
-		cityNameInput.value = '';
-		curTemp.value = '';
-		minTemp.value = '';
-		maxTemp.value = '';
 		weatherId.value = 804;
+		create.style.visibility = 'visible';
 	}
 }

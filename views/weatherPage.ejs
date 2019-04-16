@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>VOID</title>
+      <title>Not Climatune</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
       <link rel="stylesheet" href="../resources/css/weatherPage.css">
@@ -11,7 +11,7 @@
       <div class="location">
         <form>
           <fieldset>
-            <legend>VOID</legend>
+            <legend>NOT CLIMATUNE</legend>
             <div class="inner-location">
               <div class="input-field">
                 <input type="text" id="search-txt" placeholder="Enter City Name">
@@ -23,11 +23,11 @@
       </div>
 
       <div class="displayWeather" id="display_weather">
-				<!-- TODO: Make video background. Messed it up my bad. -->
-				<!-- <video src="https://media.giphy.com/media/dI3D3BWfDub0Q/giphy.gif" autoplay loop></video> -->
         <form action="/home" method="get">
           <fieldset>
               <div class="decideWeather">
+                <input id="savedID" type="hidden" name="savedID" value="">
+                <input id="savedWeather" type="hidden" name="savedWeather" value="">
                 <input id="cityName" name="cityName" type="hidden" value="">
 								<input id="weatherId" name="weatherId" type="hidden" value="">
                 <input id="minTemp" name="minTemp" type="hidden" value="">
@@ -81,7 +81,7 @@
                 </div>
                 <div class="row line3">
                   <div class="col parent">
-                    <button class="wsubmit">
+                    <button id="wsubmit">
                       <p id="labelsubmit">CREATE PLAYLIST</p>
                     </button>
                   </div>

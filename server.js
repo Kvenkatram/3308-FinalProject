@@ -49,7 +49,7 @@ app.post('/register/submit',function(req,res){
 
 	db.any(insert_statement)
 		.then(function(insert){
-			res.render('register');
+			res.render('login');
 		})
 		.catch(function(err){
 			request.flash('error',err);

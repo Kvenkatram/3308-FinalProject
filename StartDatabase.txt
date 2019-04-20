@@ -1,8 +1,32 @@
-//Database
+//How to set up the Database
+
+//In the terminal type
 
 sudo -u postgres psql
 
-create database ourDb;
+//type command and set password to 123
 
-\c ourDb;
+\password 
 
+//create db
+
+create database finalproject3308;
+
+//move into created db
+
+\c finalproject3308;
+
+
+//copy and paste following code into psql
+
+DROP TABLE user_register;
+CREATE TABLE IF NOT EXISTS user_register(
+	id SERIAL PRIMARY KEY,            /* the primary key for each entry */
+	user_Name VARCHAR(40) NOT NULL,   /* the name of the user      */
+	password TEXT NOT NULL,          /* the password  */
+	email TEXT NOT NULL			  /* the email which is connected to the user account in case of user forget password*/
+
+);
+
+//quit psql
+ \q

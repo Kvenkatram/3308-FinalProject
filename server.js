@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
 
 
 var pgp = require('pg-promise')();
-//to do: set up db locally
+//For local db
 const dbConfig = {
 	host: 'localhost',
 	port: 5432,
@@ -23,7 +23,12 @@ const dbConfig = {
 	password: '123'
 };
 
+//for Horuku
+//const dbConfig = process.env.DATABASE_URL;
+
 var db = pgp(dbConfig);
+
+
 
 //display_login
 app.get('/', function(req,res){

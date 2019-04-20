@@ -29,8 +29,10 @@
               <p> Minimum Tempurature: <%- minTemp %></p>
               <p> Maximum Tempurature: <%- maxTemp %></p>
            <script src="../resources/js/homescript.js"></script>
+           <script src="../resources/js/spotifyAPI.js"></script>
            <script>
             var id = <%-JSON.stringify(weatherId)%>;
+            songCascade("test");
             changeBackground(id);
             keywordPicker(id);
            </script>

@@ -115,7 +115,9 @@ app.post('/register/submit',function(req,res){
 
 	db.any(insert_statement)
 		.then(function(insert){
-			res.render('login');
+			res.render('login',{
+				isValid: ''
+			});
 		})
 		.catch(function(err){
 			request.flash('error',err);
@@ -171,13 +173,6 @@ app.get('/home',function(req,res){
 			maxTemp: maxTemp,
 		})
 	}
-});
-
-
-app.get('/home/playlists', function(req,res){
-
-
-
 });
 
 
@@ -307,8 +302,8 @@ function keywordPicker(num) {
 }
 
 //localhost
-//app.listen(2000);
-//console.log('server up on port 2000');
+app.listen(2000);
+console.log('server up on port 2000');
 
 //heroku
-app.listen(process.env.PORT);
+//app.listen(process.env.PORT);

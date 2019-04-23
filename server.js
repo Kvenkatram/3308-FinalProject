@@ -302,8 +302,8 @@ function keywordPicker(num) {
 }
 
 //localhost
-app.listen(2000);
-console.log('server up on port 2000');
+//app.listen(2000);
+//console.log('server up on port 2000');
 
 //heroku
-//app.listen(process.env.PORT);
+app.listen(process.env.PORT);

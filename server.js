@@ -188,7 +188,7 @@ app.get('/weatherPage',function(req,res){
 let client_id = "011752af6d22471880ead0a4a1e6b09b";
 let client_secret = "c301ed02c7734ec1ac78c13da98980c0";
 
-let basic = new Buffer(client_id + ':' + client_secret).toString('base64'); 
+let basic = new Buffer.from(client_id + ':' + client_secret).toString('base64'); 
 let Spotify = require('node-spotify-api');
 //var keyword = "bread";
 let refreshToken = "AQCbz2qFhfgBMIuCCcdho8kxSZRqStiUXJk-YhChSiLroQPO9kuTlH1PSvM9x48GGOzTARmv_GW2SrPyv1nBIJWmybWHWQEiMPiE0RC4hzrALZXPzj9IsbypycXqVKJsdd2Img";

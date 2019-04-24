@@ -15,6 +15,7 @@ let playlistID;
 
 var pgp = require('pg-promise')();
 //For local db
+/*
 const dbConfig = {
 	host: 'localhost',
 	port: 5432,
@@ -22,9 +23,9 @@ const dbConfig = {
 	user: 'postgres',
 	password: '123'
 };
-
+*/
 //for Horuku
-//const dbConfig = process.env.DATABASE_URL;
+const dbConfig = process.env.DATABASE_URL;
 
 var db = pgp(dbConfig);
 
@@ -302,8 +303,9 @@ function keywordPicker(num) {
 }
 
 //localhost
-//app.listen(2000);
-//console.log('server up on port 2000');
-
+/*
+app.listen(2000);
+console.log('server up on port 2000');
+*/
 //heroku
 app.listen(process.env.PORT);

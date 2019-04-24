@@ -1,4 +1,4 @@
-KEY = "";
+KEY = "c4bfd6c17c9b7ce8d7a6d054dcce4b2e";
 
 let searchBtn = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");

@@ -15,7 +15,6 @@ let playlistID;
 
 var pgp = require('pg-promise')();
 //For local db
-/*
 const dbConfig = {
 	host: 'localhost',
 	port: 5432,
@@ -23,10 +22,11 @@ const dbConfig = {
 	user: 'postgres',
 	password: '123'
 };
-*/
+
+/*
 //for Horuku
 const dbConfig = process.env.DATABASE_URL;
-
+*/
 var db = pgp(dbConfig);
 
 let cloudy = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -160,6 +160,7 @@ app.get('/home',function(req,res){
 	var curTemp = req.query.curTemp;
 	var minTemp = req.query.minTemp;
 	var maxTemp = req.query.maxTemp;
+	
 	if(playlistID == undefined){
 		songCascade(keywordPicker(weatherId));
 	}
@@ -173,6 +174,7 @@ app.get('/home',function(req,res){
 			minTemp: minTemp,
 			maxTemp: maxTemp,
 		})
+		playlistID = undefined;
 	}
 });
 
@@ -303,9 +305,11 @@ function keywordPicker(num) {
 }
 
 //localhost
-/*
+
 app.listen(2000);
 console.log('server up on port 2000');
-*/
+
+/*
 //heroku
 app.listen(process.env.PORT);
+*/

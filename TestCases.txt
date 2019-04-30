@@ -1,0 +1,80 @@
+Registration:
+
+Functionality testing:
+First Name:       Barbara
+Last Name:  	  Streisand
+Email:      	  barbara@streisand.com
+Password:         12345
+Confirm Password: 12345
+
+Duplicate name testing:
+First Name:       Barbara
+Last Name:  	  Streisand
+Email:      	  barbara@streisand.com
+Password:         12345
+Confirm Password: 12345
+
+Non-matching password test:
+First Name:       Barbara
+Last Name:  	  Streisand
+Email:      	  barbara@streisand.com
+Password:         12345
+Confirm Password: 54321
+
+Non-email checker:
+First Name:       Barbara
+Last Name:  	  Streisand
+Email:      	  tomatoes
+Password:         12345
+Confirm Password: 12345
+
+
+Login Testing:
+
+Incorrect login:
+Login:    potatoes
+Password: 99999
+
+Correct Login:
+Login:    barbara@streisand.com
+Password: 12345
+
+
+Keyword picker function testing:
+
+Input: Cloudy
+Output: [Must be a string of 3 concatonated words from the cloudy keyword array]
+
+Input: Rain
+Output: [Must be a string of 3 concatonated words from the rainy keyword array]
+
+Input: Clear
+Output: [Must be a string of 3 concatonated words from the sunny keyword array]
+
+Input: Snow
+Output: [Must be a string of 3 concatonated words from the snowy keyword array]
+
+Input: Thunder
+Output: [Must be a string of 3 concatonated words from the thunder keyword array]
+
+
+Weather API:
+
+Input: Select city
+Output: Weather from that city
+
+
+Current Location Functionality:
+
+Input: Click
+Output: Correct Current Location
+
+
+Spotify API:
+
+Input: String of 3 concatonated keywords
+Output: A playlist of length 20 based on those keywords
+
+Input: A single word
+Output: A playlist of length 20 based on that word
+

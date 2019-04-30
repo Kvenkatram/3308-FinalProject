@@ -14,6 +14,8 @@ app.use(express.static(__dirname + '/'));//This line is necessary for us to use 
 let playlistID;
 
 var pgp = require('pg-promise')();
+
+/*
 //For local db
 const dbConfig = {
 	host: 'localhost',
@@ -22,11 +24,10 @@ const dbConfig = {
 	user: 'postgres',
 	password: '123'
 };
+*/
 
-/*
 //for Horuku
 const dbConfig = process.env.DATABASE_URL;
-*/
 var db = pgp(dbConfig);
 
 let cloudy = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
@@ -305,11 +306,10 @@ function keywordPicker(num) {
 }
 
 //localhost
-
+/*
 app.listen(2000);
 console.log('server up on port 2000');
+*/
 
-/*
 //heroku
 app.listen(process.env.PORT);
-*/

@@ -6,7 +6,7 @@ logging in simply enter the location for where you would like the weather inform
 It will customize a playlist to that weather and display it on the page for your enjoyment. 
 
 Structure:   
-  Views: contains .html files for the webpages   
+  HTML: contains .html files for the webpages   
   node_modules: contains all of the files for the node server to run   
   resources: contains folders for the JavaScript and CSS files   
   views: contains the .ejs files and partials   
